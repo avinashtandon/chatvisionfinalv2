@@ -41,7 +41,10 @@ public class ProformaInvoiceController {
         return new ResponseEntity<>(invoices, HttpStatus.OK);
 
     }
-
+    @Operation(
+            summary = "Get operation on Clients",
+            description = "It is used to retrieve client Object in database"
+    )
     @GetMapping("/client")
     public ResponseEntity<List<Client>> getAllClients() {
         List<Client> clients = clientService.getAllClients();  // Use instance method
@@ -49,6 +52,10 @@ public class ProformaInvoiceController {
     }
 
     // Endpoint to get all factories
+    @Operation(
+            summary = "Get operation on Factories",
+            description = "It is used to retrieve factory Object in database"
+    )
     @GetMapping("/factory")
     public ResponseEntity<List<Factory>> getAllFactory() {
         List<Factory> factories = factoryService.getAllFactory();
